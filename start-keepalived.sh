@@ -1,3 +1,4 @@
 #!/bin/sh
 
-/usr/sbin/keepalived --dont-fork --log-console
+/usr/sbin/keepalived --dont-fork --log-console -f /etc/keepalived/keepalived.conf 
+
