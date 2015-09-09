@@ -9,6 +9,6 @@ ADD notifyscript.sh /bin/notifyscript.sh
 # Prepare image
 RUN chmod +x /bin/start-keepalived.sh \
     && chmod +x /bin/notifyscript.sh \
-    && apk add keepalived bash --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+    && apk add keepalived bash --update-cache --repository http://dl-4.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
 ENTRYPOINT ["/bin/start-keepalived.sh"]
