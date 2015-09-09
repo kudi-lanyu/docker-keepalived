@@ -4,7 +4,7 @@ Basic Docker image to run keepalived on host and set additional ip on interface
 
 To run docker in docker you must add this volumes:
 - --net=host
-- --privileged=true
+- --cap-add=NET_ADMIN
 - --name keepalived0 (optionally)
 
 You need edit (add) this env:
