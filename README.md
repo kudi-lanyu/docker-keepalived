@@ -1,7 +1,24 @@
-# keepalived
-Just running keepalived on host == set additional ip on interface 
+# Docker image containing Keepalived
 
-Howto run? and test
-docker run --net=host --privileged=true -e VIP=192.168.1.177 -e MASK=27 -e ROUTERID=Router1 -e VROUTERID=111 -e STATE=Master -e INTERFACE=eno1 -e PRIORITY=100 -e ADVERT=1 -e AUTHPASS=dupa  -e SMTPSERV=mail.test.pl -e NOTIFIEMAILFROM=lczarski@gmail.com -e NOTIFIEMAILTO=test@gmail.com --name keepalived0 -d  tanktest3 
+Basic Docker image to run keepalived on host and set additional ip on interface 
+
+To run docker in docker you must add this volumes:
+- --net=host
+- --privileged=true
+- --name keepalived0 (optionally)
+
+You need edit (add) this env:
+- VIP=192.168.1.177
+- MASK=27
+- ROUTERID=Router1
+- VROUTERID=111
+- STATE=Master
+- INTERFACE=eno1
+- PRIORITY=100
+- ADVERT=1
+- AUTHPASS=blah
+- SMTPSERV=mail.test.pl
+- NOTIFIEMAILFROM=lczarski@gmail.com
+- NOTIFIEMAILTO=test@gmail.com
 
 
