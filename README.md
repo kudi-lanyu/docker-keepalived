@@ -8,17 +8,17 @@ To run docker in docker you must add this volumes:
 - --name keepalived0 (optionally)
 
 You need edit (add) this env:
-- VIP=192.168.1.177
-- MASK=27
-- ROUTERID=Router1
-- VROUTERID=111
-- STATE=Master
-- INTERFACE=eno1
-- PRIORITY=100
-- ADVERT=1
-- AUTHPASS=blah
-- SMTPSERV=mail.test.com
-- NOTIFIEMAILFROM=keepalived@mail.test.com
-- NOTIFIEMAILTO=test@mail.test.com
+- **VIP**: 192.168.1.177
+- **MASK**: 27
+- **ROUTERID**: Router1
+- **VROUTERID**: 111
+- **STATE**: Master
+- **INTERFACE**: eno1
+- **PRIORITY**: 100
+- **ADVERT**: 1
+- **AUTHPASS**: blah
+- **SMTPSERV**: mail.test.com
+- **NOTIFIEMAILFROM**: keepalived@mail.test.com
+- **NOTIFIEMAILTO**: test@mail.test.com
 
 
