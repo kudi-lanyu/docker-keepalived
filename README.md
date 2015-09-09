@@ -17,8 +17,8 @@ You need edit (add) this env:
 - PRIORITY=100
 - ADVERT=1
 - AUTHPASS=blah
-- SMTPSERV=mail.test.pl
-- NOTIFIEMAILFROM=lczarski@gmail.com
-- NOTIFIEMAILTO=test@gmail.com
+- SMTPSERV=mail.test.com
+- NOTIFIEMAILFROM=keepalived@mail.test.com
+- NOTIFIEMAILTO=test@mail.test.com
 
 
