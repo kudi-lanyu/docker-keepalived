@@ -21,4 +21,9 @@ You need edit (add) this env:
 - **NOTIFIEMAILFROM**: keepalived@mail.test.com
 - **NOTIFIEMAILTO**: test@mail.test.com
 
+Usage: 
+```
+docker run --net=host --cap-add=NET_ADMIN -e VIP=192.168.1.175 -e MASK=27 -e ROUTERID=Router1 -e VROUTERID=112 -e STATE=Master -e INTERFACE=eno1 -e PRIORITY=100 -e ADVERT=1 -e AUTHPASS=blah  -e SMTPSERV=mail.test.com -e NOTIFIEMAILFROM=keepalived@mail.test.com -e NOTIFIEMAILTO=test@mail.test.com --name keepalived0 -d  oberthur/docker-keepalived  
+```
+
 
