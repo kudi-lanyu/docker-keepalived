@@ -1,4 +1,4 @@
-FROM oberthur/docker-ubuntu:14.04.4
+FROM oberthur/docker-ubuntu:16.04
 
 MAINTAINER Lukasz Czarski <l.czarski@oberthur.com>
 
