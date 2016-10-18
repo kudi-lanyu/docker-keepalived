@@ -3,7 +3,6 @@ set -e
 
 echo "=> Configuring Keepalived"
 
-sed -i -e "s/<--ROUTERID-->/${ROUTERID}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--VROUTERID-->/${VROUTERID}/g" /etc/keepalived/keepalived.conf
 
 sed -i -e "s/<--VIP-->/${VIP}/g" /etc/keepalived/keepalived.conf
