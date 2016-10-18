@@ -10,7 +10,6 @@ To run docker in docker you must add this options:
 You need edit (add) this env:
 - **VIP**: 192.168.1.177
 - **MASK**: 27
-- **ROUTERID**: Router1
 - **VROUTERID**: 111
 - **STATE**: Master
 - **INTERFACE**: eno1
@@ -20,7 +19,7 @@ You need edit (add) this env:
 
 Usage: 
 ```
-docker run --net=host --cap-add=NET_ADMIN -e VIP=192.168.1.175 -e MASK=27 -e ROUTERID=Router1 -e VROUTERID=112 -e STATE=Master -e INTERFACE=eno1 -e PRIORITY=100 -e ADVERT=1 -e AUTHPASS=blah --name keepalived0 -d  oberthur/docker-keepalived  
+docker run --net=host --cap-add=NET_ADMIN -e VIP=192.168.1.175 -e MASK=27 -e VROUTERID=112 -e STATE=Master -e INTERFACE=eno1 -e PRIORITY=100 -e ADVERT=1 -e AUTHPASS=blah --name keepalived0 -d  oberthur/docker-keepalived  
 ```
 
 
