@@ -7,9 +7,15 @@ To run docker in docker you must add this options:
 - --cap-add=NET_ADMIN
 - --name keepalived0 (optionally)
 
+Load needed kernel module:
+- ip_vs
+
+Configure sysctl:
+- `net.ipv4.ip_forward = 1`
+- `net.ipv4.ip_nonlocal_bind = 1`
+
 You need edit (add) this env:
 - **VIP**: 192.168.1.177
-- **MASK**: 27
 - **VROUTERID**: 111
 - **STATE**: Master
 - **INTERFACE**: eno1
