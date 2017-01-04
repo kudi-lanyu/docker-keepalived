@@ -15,17 +15,16 @@ Configure sysctl:
 - `net.ipv4.ip_nonlocal_bind = 1`
 
 You need edit (add) this env:
-- **VIP**: 192.168.1.177
-- **VROUTERID**: 111
-- **STATE**: Master
-- **INTERFACE**: eno1
-- **PRIORITY**: 100
-- **ADVERT**: 1
-- **AUTHPASS**: blah
+- **VIP**: provide virtual ip
+- **VROUTERID**: provide arbitary unique number 0..255
+- **STATE**: provide transition state (MASTER, BACKUP, FAULT)
+- **INTERFACE**: provide interface name
+- **PRIORITY**: provide election priority (default 100)
+- **AUTHPASS**: provide authentication password
 
 Usage: 
 ```
-docker run --net=host --cap-add=NET_ADMIN -e VIP=192.168.1.175 -e VROUTERID=112 -e STATE=Master -e INTERFACE=eno1 -e PRIORITY=100 -e ADVERT=1 -e AUTHPASS=blah --name keepalived0 -d  oberthur/docker-keepalived  
+docker run --net=host --cap-add=NET_ADMIN -e VIP=192.168.1.175 -e VROUTERID=112 -e STATE=Master -e INTERFACE=eno1 -e PRIORITY=100 -e AUTHPASS=blah --name keepalived0 -d  oberthur/docker-keepalived  
 ```
 
 
