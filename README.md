@@ -16,6 +16,7 @@ Configure sysctl:
 
 You need edit (add) this env:
 - **VIP**: provide virtual ip
+- **VIP2**: provide second virtual ip
 - **VROUTERID**: provide arbitary unique number 0..255
 - **STATE**: provide transition state (MASTER, BACKUP, FAULT)
 - **INTERFACE**: provide interface name
