@@ -15,7 +15,7 @@ Configure sysctl:
 - `net.ipv4.ip_nonlocal_bind = 1`
 
 You need edit (add) this env:
-- **VIP**: (optionally provide virtual ip
+- **VIP**: (optionally) provide virtual ip
 - **VIP_N**: (optionally) provide a few virtual ip's
 - **VROUTERID**: provide arbitary unique number 0..255
 - **STATE**: provide transition state (MASTER, BACKUP, FAULT)
