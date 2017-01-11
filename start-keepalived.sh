@@ -9,7 +9,7 @@ sed -i -e "s/<--INTERFACE-->/${INTERFACE}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--PRIORITY-->/${PRIORITY:-100}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--AUTHPASS-->/${AUTHPASS}/g" /etc/keepalived/keepalived.conf
 
-for VIP in $( env |grep VIP |sort | awk -F "=" '{print $2}')
+for VIP in $( env |grep VIP |sort | awk -F "=" '{print $2}' )
 do
   VIPx=$( env |grep ${VIP} |sed 's/^[^=]*=//' )
   echo ${VIPx} > ${VIP}
@@ -18,7 +18,6 @@ do
 fi
 echo "VIP's added"
 done
-
 
 echo "=> Starting Keepalived ... : "
 
