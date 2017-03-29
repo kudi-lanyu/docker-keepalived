@@ -2,10 +2,11 @@ FROM oberthur/docker-ubuntu:16.04
 
 ENV KEEPALIVED_VERSION=1.2.23
 
-MAINTAINER Lukasz Czarski <l.czarski@oberthur.com>
+MAINTAINER Dawid Malinowski <d.malinowski@oberthur.com>
 
 COPY start-keepalived.sh /bin/start-keepalived.sh
 COPY notifyscript.sh /bin/notifyscript.sh
+COPY check-status.sh /bin/check-status.sh
 
 # Prepare image
 RUN chmod +x /bin/*.sh \

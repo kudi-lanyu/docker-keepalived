@@ -22,6 +22,9 @@ You need edit (add) this env:
 - **INTERFACE**: provide interface name
 - **PRIORITY**: provide election priority (default 100)
 - **AUTHPASS**: provide authentication password
+- **INTERVAL**: (optional) how ofter vrrp script should be run (default 10)
+
+> To implement custom vrrp script you should replace file `/bin/check-status.sh`
 
 Usage: 
 ```

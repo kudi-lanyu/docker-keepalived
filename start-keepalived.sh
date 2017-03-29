@@ -3,6 +3,7 @@ set -e
 
 echo "=> Configuring Keepalived"
 
+sed -i -e "s/<--INTERVAL-->/${INTERVAL_VRRP_SCRIPT_CHECK:-10}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--VROUTERID-->/${VROUTERID}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--STATE-->/${STATE}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--INTERFACE-->/${INTERFACE}/g" /etc/keepalived/keepalived.conf
