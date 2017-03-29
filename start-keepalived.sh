@@ -20,5 +20,6 @@ echo "VIP's added"
 done
 
 echo "=> Starting Keepalived ... : "
+cat /etc/keepalived/keepalived.conf
 
 exec /usr/sbin/keepalived --dont-fork --log-console -f /etc/keepalived/keepalived.conf
