@@ -4,7 +4,7 @@ STATE=$1
 NOW=$(date +"%D %T")
 
 case $STATE in
-        "MASTER") touch ${LOGPATH}/keepalived.log
+        "MASTER") touch /keepalived.log
                   echo "${NOW} Becoming MASTER" >> /keepalived.log 
                   exit 0
                   ;;
