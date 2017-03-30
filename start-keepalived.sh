@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 echo "=> Configuring Keepalived"
 
-sed -i -e "s/<--INTERVAL-->/${INTERVAL_VRRP_SCRIPT_CHECK:-10}/g" /etc/keepalived/keepalived.conf
+sed -i -e "s/<--INTERVAL-->/${INTERVAL_VRRP_SCRIPT_CHECK:-3}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--VROUTERID-->/${VROUTERID}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--STATE-->/${STATE}/g" /etc/keepalived/keepalived.conf
 sed -i -e "s/<--INTERFACE-->/${INTERFACE}/g" /etc/keepalived/keepalived.conf
@@ -12,12 +12,8 @@ sed -i -e "s/<--AUTHPASS-->/${AUTHPASS}/g" /etc/keepalived/keepalived.conf
 
 for VIP in $( env | grep VIP | sort | awk -F "=" '{print $2}' )
 do
-  VIPx=$( env | grep ${VIP} | sed 's/^[^=]*=//' )
-  echo ${VIPx} > ${VIP}
-  if [ -n "$( env | grep VIP )" ]; then
-  sed -i -e "/virtual_ipaddress {/a\        ${VIPx}" /etc/keepalived/keepalived.conf;
-fi
-echo "VIP's added"
+  echo "Adding VIP: ${VIP}"
+  sed -i -e "s/virtual_ipaddress {/virtual_ipaddress {\n        ${VIP}/" /etc/keepalived/keepalived.conf;
 done
 
 echo "=> Starting Keepalived ... : "
