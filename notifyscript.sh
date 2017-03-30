@@ -1,7 +1,7 @@
 #!/bin/bash
 
 STATE=$1
-NOW=$(date +"%D %T")
+NOW=$(date --iso-8601=seconds)
 
 case $STATE in
         "MASTER") touch /keepalived.log
