@@ -12,7 +12,7 @@ COPY check-status.sh /bin/check-status.sh
 RUN chmod +x /bin/*.sh \
     && add-apt-repository ppa:keepalived/stable \
     && apt-get update \
-    && apt-get install keepalived=1:${KEEPALIVED_VERSION}* \
+    && apt-get install -y psmisc keepalived=1:${KEEPALIVED_VERSION}* \
     # clean up
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
