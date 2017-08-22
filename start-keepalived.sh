@@ -12,8 +12,13 @@ sed -i -e "s/<--AUTHPASS-->/${AUTHPASS}/g" /etc/keepalived/keepalived.conf
 
 for VIP in $( env | grep VIP | sort | awk -F "=" '{print $2}' )
 do
-  echo "Adding VIP: ${VIP}"
-  sed -i -e "s/virtual_ipaddress {/virtual_ipaddress {\n        ${VIP}/" /etc/keepalived/keepalived.conf;
+  if grep -q $VIP /etc/keepalived/keepalived.conf;
+  then
+    echo "VIP ${VIP} already added"
+  else
+    echo "Adding VIP: ${VIP}"
+    sed -i -e "s/virtual_ipaddress {/virtual_ipaddress {\n        ${VIP}/" /etc/keepalived/keepalived.conf;
+  fi
 done
 
 echo "=> Starting Keepalived ... : "
